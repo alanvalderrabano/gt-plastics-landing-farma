@@ -30,8 +30,9 @@
 <!-- Estilos -->
 <link rel="stylesheet" href="assets/styles.css">
 
-<!-- Preload de la tarima del hero (LCP) -->
-<link rel="preload" as="image" href="assets/tarima-cerrada.webp" type="image/webp">
+<!-- Preload del hero (LCP): persona farma + tarima en composición -->
+<link rel="preload" as="image" href="assets/object-plastic-stack.webp" type="image/webp">
+<link rel="preload" as="image" href="assets/person-pharma.webp" type="image/webp">
 
 <!-- Schema JSON-LD: Organization + Service -->
 <script type="application/ld+json">
@@ -57,7 +58,7 @@
 </head>
 <body>
 
-<!-- ============ HEADER (sticky, translúcido, solo logo + CTA) ============ -->
+<!-- ============ HEADER (sticky, SIEMPRE blanco sólido, solo logo + CTA) ============ -->
 <header class="site-header" id="site-header">
   <div class="container header-inner">
     <a href="#top" class="header-logo" aria-label="GT+plastics — inicio">
@@ -107,26 +108,57 @@
         </div>
       </div>
 
-      <div class="hero__visual reveal">
-        <!-- PLACEHOLDER: foto de almacén farmacéutico limpio (no está en design system).
-             Mientras, marco verde glassmorphism con la tarima real como héroe. -->
-        <div class="hero__photo" role="img" aria-label="Almacén farmacéutico con tarimas de plástico para áreas limpias">
-          <span class="ph-tag">Placeholder: foto almacén farma</span>
-          <picture>
-            <source srcset="assets/tarima-cerrada.webp" type="image/webp">
-            <img class="hero__tarima" src="assets/tarima-cerrada.png"
-                 alt="Tarima de plástico cerrada para industria farmacéutica"
-                 width="640" height="480" decoding="async" fetchpriority="high">
+      <div class="hero__visual">
+        <!-- Composición de marca en capas: rejilla + halo verde + persona farma real
+             + tarimas reales 3/4 + tarjetas glass con íconos 3D flotantes. -->
+        <div class="hero-comp reveal-img" role="img" aria-label="Especialista de farma con bata y cofia revisando una tablet junto a tarimas de plástico apiladas, con sellos de inocuidad y auditoría">
+          <span class="hero-comp__grid" aria-hidden="true"></span>
+          <span class="hero-comp__halo" aria-hidden="true"></span>
+
+          <!-- Tarima real (apilada) como apoyo, en 3/4 -->
+          <picture class="hero-comp__tarima" data-parallax="-0.05">
+            <source srcset="assets/object-plastic-stack.webp" type="image/webp">
+            <img src="assets/object-plastic-stack.png"
+                 alt=""
+                 width="320" height="237" decoding="async" fetchpriority="high">
           </picture>
+
+          <!-- Persona protagonista: operador de farma (bata + cofia) recortado sobre el halo verde -->
+          <figure class="hero-person" data-parallax="0.05">
+            <picture>
+              <source srcset="assets/person-pharma.webp" type="image/webp">
+              <img src="assets/person-pharma.png"
+                   alt="Especialista de farma con bata y cofia revisando una tablet"
+                   width="225" height="440" decoding="async" fetchpriority="high">
+            </picture>
+          </figure>
+
+          <!-- Tarjeta glass: apta para farma / ISO 9001 (escudo 3D) -->
+          <span class="hero-chip hero-chip--farma float">
+            <picture>
+              <source srcset="assets/icon-shield.webp" type="image/webp">
+              <img src="assets/icon-shield.png" alt="" width="38" height="38" aria-hidden="true">
+            </picture>
+            <span class="hero-chip__txt"><b>Apta para farma</b>ISO 9001</span>
+          </span>
+
+          <!-- Tarjeta glass: lista para auditoría (checklist 3D) -->
+          <span class="hero-chip hero-chip--audit float float--delay">
+            <picture>
+              <source srcset="assets/icon-checklist.webp" type="image/webp">
+              <img src="assets/icon-checklist.png" alt="" width="34" height="34" aria-hidden="true">
+            </picture>
+            <span class="hero-chip__txt"><b>Lista para auditoría</b>Trazabilidad</span>
+          </span>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ===================== 2. STATS (Interest) — OSCURO ===================== -->
-  <section class="stats section--dark-solid" aria-labelledby="stats-title">
+  <!-- ===================== 2. STATS (Interest) — CLARO (rompe la adyacencia verde-sobre-verde) ===================== -->
+  <section class="stats section--light" aria-labelledby="stats-title">
     <div class="container">
-      <h2 id="stats-title" class="section-title section-title--center">RESPALDO QUE SE <span class="hl">SIENTE</span></h2>
+      <h2 id="stats-title" class="section-title section-title--center reveal">RESPALDO QUE SE <span class="hl">SIENTE</span></h2>
       <ul class="stats__grid">
         <li class="stat reveal">
           <span class="stat__num" data-count="50" data-suffix="">0</span>
@@ -153,7 +185,10 @@
   <!-- ===================== 3. DOLOR (Interest/Desire) — CLARO ===================== -->
   <section class="pain section--light" aria-labelledby="pain-title">
     <div class="container">
-      <h2 id="pain-title" class="section-title reveal">EL <span class="hl">VERDADERO</span> PROBLEMA</h2>
+      <h2 id="pain-title" class="section-title section-title--icon reveal">
+        <span class="section-title__ico" aria-hidden="true"><i class="fig-ico fig-ico--red" style="--ic:url('figma-icons/icono-lineal-09.svg')"></i></span>
+        EL <span class="hl">VERDADERO</span> PROBLEMA
+      </h2>
       <p class="lead reveal">
         La tarima parece el detalle más económico hasta que cuesta un lote, auditoría o paro de línea.
         En farma, toca el producto directamente. Entrada con humedad, plaga o sin trazabilidad contamina
@@ -202,8 +237,8 @@
 
         <div class="benefits">
           <article class="benefit reveal">
-            <span class="benefit__ico" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path d="M12 2l8 4v6c0 5-3.4 8.4-8 10-4.6-1.6-8-5-8-10V6l8-4z" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M9 12l2 2 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span class="benefit__ico benefit__ico--figma" aria-hidden="true">
+              <i style="--ic:url('figma-icons/icono-medicina.svg')"></i>
             </span>
             <div>
               <h3 class="benefit__title">Inocua y fácil de sanitizar</h3>
@@ -211,8 +246,8 @@
             </div>
           </article>
           <article class="benefit reveal">
-            <span class="benefit__ico" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M5.6 5.6l2.8 2.8M15.6 15.6l2.8 2.8M18.4 5.6l-2.8 2.8M8.4 15.6l-2.8 2.8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>
+            <span class="benefit__ico benefit__ico--figma" aria-hidden="true">
+              <i style="--ic:url('figma-icons/icono-lineal-05.svg')"></i>
             </span>
             <div>
               <h3 class="benefit__title">Resistente al frío y al movimiento</h3>
@@ -220,8 +255,8 @@
             </div>
           </article>
           <article class="benefit reveal">
-            <span class="benefit__ico" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path d="M7 7h7a4 4 0 0 1 0 8H9m-2-8L5 5m2 2L5 9m12 8H10a4 4 0 0 1 0-8h5m2 8l2 2m-2-2l2-2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span class="benefit__ico benefit__ico--figma" aria-hidden="true">
+              <i style="--ic:url('figma-icons/icono-iluminado-principal.svg')"></i>
             </span>
             <div>
               <h3 class="benefit__title">Sostenible</h3>
@@ -233,7 +268,7 @@
         <a href="#diagnostico" class="btn btn--pill btn--lima js-cta reveal">Solicitar diagnóstico gratis</a>
       </div>
 
-      <div class="solution__visual reveal" aria-hidden="false">
+      <div class="solution__visual reveal-img" aria-hidden="false">
         <figure class="tarima-stack">
           <picture>
             <source srcset="assets/tarima-cerrada.webp" type="image/webp">
@@ -263,7 +298,16 @@
 
       <div class="roi__compare">
         <div class="roi-col roi-col--bad reveal">
-          <h3 class="roi-col__head"><span class="mark mark--x" aria-hidden="true">✗</span> Madera</h3>
+          <!-- Tarima de madera real (refuerzo visual del problema) -->
+          <picture class="roi-col__pallet" aria-hidden="true">
+            <source srcset="assets/object-wood-pallet.webp" type="image/webp">
+            <img src="assets/object-wood-pallet.png" alt="" width="160" height="92" loading="lazy" decoding="async">
+          </picture>
+          <h3 class="roi-col__head">
+            <!-- Tache: ícono del Figma (icono-tacha) en rojo -->
+            <span class="mark mark--fig" aria-hidden="true"><i class="fig-ico fig-ico--red" style="--ic:url('figma-icons/icono-tacha.svg')"></i></span>
+            Madera
+          </h3>
           <ul class="roi-list">
             <li>Solo <strong>5-6 viajes</strong> de vida útil</li>
             <li>Reposición continua por astillas, humedad o clavos</li>
@@ -274,7 +318,21 @@
         </div>
 
         <div class="roi-col roi-col--good reveal">
-          <h3 class="roi-col__head"><span class="mark mark--check" aria-hidden="true">✓</span> Plástico</h3>
+          <!-- Flecha de crecimiento 3D (ahorro/ROI a favor del plástico) -->
+          <picture class="roi-col__growth float" aria-hidden="true">
+            <source srcset="assets/icon-flecha-crecimiento.webp" type="image/webp">
+            <img src="assets/icon-flecha-crecimiento.png" alt="" width="64" height="64" loading="lazy" decoding="async">
+          </picture>
+          <!-- Tarima de plástico real (refuerzo visual de la solución) -->
+          <picture class="roi-col__pallet" aria-hidden="true">
+            <source srcset="assets/object-plastic-pallet.webp" type="image/webp">
+            <img src="assets/object-plastic-pallet.png" alt="" width="160" height="79" loading="lazy" decoding="async">
+          </picture>
+          <h3 class="roi-col__head">
+            <!-- Palomita: ícono del Figma (icono-lineal-01) en verde -->
+            <span class="mark mark--fig" aria-hidden="true"><i class="fig-ico fig-ico--green" style="--ic:url('figma-icons/icono-lineal-01.svg')"></i></span>
+            Plástico
+          </h3>
           <ul class="roi-list">
             <li>Hasta <strong>10 años</strong> de vida útil (250 viajes)</li>
             <li>Se paga solo en pocos años y sigue rindiendo</li>
@@ -292,28 +350,23 @@
   </section>
 
   <!-- ===================== 6. RESPALDO DE FÁBRICA (Desire) — OSCURO ===================== -->
-  <section class="backing section--dark-medium" aria-labelledby="back-title">
+  <section class="backing section--dark-medium has-grid" aria-labelledby="back-title">
+    <span class="section-grid" aria-hidden="true"></span>
     <div class="container">
       <h2 id="back-title" class="section-title section-title--center reveal">EL RESPALDO DETRÁS DE CADA TARIMA</h2>
       <div class="cards cards--3">
         <article class="glass-card reveal">
-          <span class="glass-card__ico" aria-hidden="true">
-            <svg viewBox="0 0 24 24"><path d="M13 2L4 14h6l-1 8 9-12h-6l1-8z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
-          </span>
+          <span class="glass-card__ico glass-card__ico--fig" aria-hidden="true"><i class="fig-ico" style="--ic:url('figma-icons/icono-lineal-03.svg')"></i></span>
           <h3 class="glass-card__title">Respuesta rápida</h3>
           <p>Cotizamos y resolvemos cuando la operación no puede esperar.</p>
         </article>
         <article class="glass-card reveal">
-          <span class="glass-card__ico" aria-hidden="true">
-            <svg viewBox="0 0 24 24"><path d="M3 21V9l6 4V9l6 4V7l6 4v10z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
-          </span>
+          <span class="glass-card__ico glass-card__ico--fig" aria-hidden="true"><i class="fig-ico" style="--ic:url('figma-icons/icono-fabrica.svg')"></i></span>
           <h3 class="glass-card__title">Fabricación propia · 12 inyectoras</h3>
           <p>Capacidad de volumen y control de calidad de principio a fin.</p>
         </article>
         <article class="glass-card reveal">
-          <span class="glass-card__ico" aria-hidden="true">
-            <svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17" cy="9" r="2.4" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3.5 19c0-3 2.5-5 5.5-5s5.5 2 5.5 5M14.5 14.5c2.4.3 4 2.3 4 4.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
-          </span>
+          <span class="glass-card__ico glass-card__ico--fig" aria-hidden="true"><i class="fig-ico" style="--ic:url('figma-icons/icono-linea.svg')"></i></span>
           <h3 class="glass-card__title">Acompañamiento especializado</h3>
           <p>Diagnóstico, pruebas en operación y soporte en implementación.</p>
         </article>
@@ -352,24 +405,34 @@
   </section>
 
   <!-- ===================== 8. PROCESO (Action) — OSCURO ===================== -->
-  <section class="process section--grad1" aria-labelledby="proc-title">
+  <section class="process section--grad1 has-grid" aria-labelledby="proc-title">
+    <span class="section-grid" aria-hidden="true"></span>
     <div class="container">
       <h2 id="proc-title" class="section-title section-title--center reveal">ASÍ DE SIMPLE ES EMPEZAR</h2>
       <p class="lead lead--on-dark lead--center reveal">De la primera llamada a la tarima correcta, en tres pasos claros.</p>
 
       <ol class="steps">
         <li class="step reveal">
-          <span class="step__num">1</span>
+          <span class="step__head">
+            <span class="step__num">1</span>
+            <span class="step__ico" aria-hidden="true"><i class="fig-ico" style="--ic:url('figma-icons/icono-lineal-06.svg')"></i></span>
+          </span>
           <h3 class="step__title">Diagnóstico</h3>
           <p>En 20 minutos se entiende la operación, normativa y racking. Se identifica el riesgo real de la tarima actual.</p>
         </li>
         <li class="step reveal">
-          <span class="step__num">2</span>
+          <span class="step__head">
+            <span class="step__num">2</span>
+            <span class="step__ico" aria-hidden="true"><i class="fig-ico" style="--ic:url('figma-icons/icono-lineal-01.svg')"></i></span>
+          </span>
           <h3 class="step__title">Pruebas</h3>
           <p>Se prueba la tarima correcta en la operación, con el producto y condiciones reales. Validación en campo, no promesas en papel.</p>
         </li>
         <li class="step reveal">
-          <span class="step__num">3</span>
+          <span class="step__head">
+            <span class="step__num">3</span>
+            <span class="step__ico" aria-hidden="true"><i class="fig-ico" style="--ic:url('figma-icons/icono-lineal-11.svg')"></i></span>
+          </span>
           <h3 class="step__title">Recomendación y cotización</h3>
           <p>Entrega de la recomendación de tarima ideal y cotización clara, con ahorro proyectado frente a lo actual.</p>
         </li>
@@ -392,16 +455,24 @@
           que te ayude a reducir el riesgo en tu próxima auditoría.
         </p>
 
-        <!-- Mientras no hay foto del personal: banda verde + isotipo + badges de respaldo -->
-        <!-- PLACEHOLDER: foto del personal de GT+plastics (confirmar disponibilidad) -->
-        <div class="form-aside">
-          <img src="assets/favicon.svg" alt="" width="48" height="48" class="form-aside__iso" aria-hidden="true">
-          <ul class="form-aside__badges">
-            <li>ISO 9001</li>
-            <li>12 inyectoras</li>
-            <li>50 años de trayectoria</li>
-          </ul>
-          <span class="ph-tag ph-tag--inline">Placeholder: foto del equipo GT+plastics</span>
+        <!-- Persona real (procurement/QA, camisa verde de marca) sobre panel verde + badges -->
+        <div class="form-aside form-aside--person">
+          <figure class="form-aside__person">
+            <picture>
+              <source srcset="assets/person-procurement.webp" type="image/webp">
+              <img src="assets/person-procurement.png"
+                   alt="Especialista de GT+plastics con tablet y portapapeles, lista para tu diagnóstico"
+                   width="240" height="466" loading="lazy" decoding="async">
+            </picture>
+          </figure>
+          <div class="form-aside__body">
+            <img src="assets/favicon.svg" alt="" width="42" height="42" class="form-aside__iso" aria-hidden="true">
+            <ul class="form-aside__badges">
+              <li>ISO 9001</li>
+              <li>12 inyectoras</li>
+              <li>50 años de trayectoria</li>
+            </ul>
+          </div>
         </div>
       </div>
 

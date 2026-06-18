@@ -29,7 +29,7 @@
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
   /* ---------- Reveal on scroll (IntersectionObserver) ---------- */
-  var reveals = document.querySelectorAll('.reveal');
+  var reveals = document.querySelectorAll('.reveal, .reveal-img');
   if (reduceMotion || !('IntersectionObserver' in window)) {
     reveals.forEach(function (el) { el.classList.add('is-in'); });
   } else {
@@ -157,16 +157,15 @@
     stepObs.observe(steps);
   } else if (steps) { steps.classList.add('is-drawn'); }
 
-  /* ---------- Header: fondo claro al pasar el hero ---------- */
+  /* ---------- Header: SIEMPRE blanco; solo añade micro-sombra al hacer scroll ---------- */
   var header = document.getElementById('site-header');
   var hero = document.getElementById('hero');
-  if (header && hero && 'IntersectionObserver' in window) {
-    var headerObs = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        header.classList.toggle('is-light', !entry.isIntersecting);
-      });
-    }, { threshold: 0, rootMargin: '-70px 0px 0px 0px' });
-    headerObs.observe(hero);
+  if (header) {
+    var onScrollHeader = function () {
+      header.classList.toggle('is-scrolled', window.scrollY > 8);
+    };
+    onScrollHeader();
+    window.addEventListener('scroll', onScrollHeader, { passive: true });
   }
 
   /* ---------- Sticky CTA: visible tras el hero, oculto en el form ---------- */
@@ -188,17 +187,22 @@
     }
   }
 
-  /* ---------- Parallax sutil del fondo del hero ---------- */
+  /* ---------- Parallax sutil por capas en el hero ---------- */
   var heroBg = document.querySelector('.hero__bg');
-  if (heroBg && !reduceMotion) {
+  var parallaxEls = Array.prototype.slice.call(document.querySelectorAll('[data-parallax]'));
+  if ((heroBg || parallaxEls.length) && !reduceMotion) {
     var ticking = false;
     window.addEventListener('scroll', function () {
       if (ticking) return;
       ticking = true;
       requestAnimationFrame(function () {
         var y = window.scrollY;
-        if (y < window.innerHeight * 1.2) {
-          heroBg.style.transform = 'translateY(' + (y * 0.08) + 'px)';
+        if (y < window.innerHeight * 1.3) {
+          if (heroBg) heroBg.style.transform = 'translateY(' + (y * 0.08) + 'px)';
+          for (var i = 0; i < parallaxEls.length; i++) {
+            var f = parseFloat(parallaxEls[i].getAttribute('data-parallax')) || 0;
+            parallaxEls[i].style.transform = 'translate3d(0,' + (y * f) + 'px,0)';
+          }
         }
         ticking = false;
       });
