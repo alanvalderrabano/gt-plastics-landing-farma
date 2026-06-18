@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- SEO -->
+<title>Tarimas de Plástico para Farma | GT+plastics</title>
+<meta name="description" content="Tarimas plásticas para farma: inocuas, fáciles de sanitizar y listas para auditoría. Reduce el riesgo en tu operación. Solicita tu diagnóstico gratis.">
+<link rel="canonical" href="https://gtplastics.mx/es/tarimas-plasticas-farmaceutica">
+
+<!-- Open Graph / Twitter -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Tarimas de Plástico para Farma | GT+plastics">
+<meta property="og:description" content="Tarimas plásticas para farma: inocuas, fáciles de sanitizar y listas para auditoría. Reduce el riesgo en tu operación. Solicita tu diagnóstico gratis.">
+<meta property="og:url" content="https://gtplastics.mx/es/tarimas-plasticas-farmaceutica">
+<!-- OG image PENDIENTE: arte final. Provisional = banner del design system -->
+<meta property="og:image" content="https://gtplastics.mx/assets/og-image.png">
+<meta property="og:locale" content="es_MX">
+<meta name="twitter:card" content="summary_large_image">
+
+<!-- Favicon (isotipo GT Plastics) -->
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+<!-- Fuentes -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<!-- Estilos -->
+<link rel="stylesheet" href="assets/styles.css">
+
+<!-- Preload del hero (LCP): persona farma + tarima en composición -->
+<link rel="preload" as="image" href="assets/object-plastic-stack.webp" type="image/webp">
+<link rel="preload" as="image" href="assets/person-pharma.webp" type="image/webp">
+
+<!-- Schema JSON-LD: Organization + Service -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "name": "GT+plastics",
+      "url": "https://gtplastics.mx",
+      "logo": "https://gtplastics.mx/assets/logo-header.svg"
+    },
+    {
+      "@type": "Service",
+      "name": "Diagnóstico de tarimas para farma",
+      "serviceType": "Tarimas de plástico para la industria farmacéutica",
+      "provider": { "@type": "Organization", "name": "GT+plastics" },
+      "areaServed": { "@type": "Country", "name": "México" }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<!-- ============ HEADER (sticky, SIEMPRE blanco sólido, solo logo + CTA) ============ -->
+<header class="site-header" id="site-header">
+  <div class="container header-inner">
+    <a href="#top" class="header-logo" aria-label="GT+plastics — inicio">
+      <img src="assets/logo-header.svg" alt="GT+plastics" width="132" height="29" decoding="async">
+    </a>
+    <a href="#diagnostico" class="btn btn--pill btn--header js-cta"><span class="btn--header__full">Solicita un diagnóstico gratis</span><span class="btn--header__short">Diagnóstico gratis</span></a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ===================== 1. HERO (Attention) — OSCURO ===================== -->
+  <section class="hero section--dark" id="hero">
+    <div class="hero__bg" aria-hidden="true"></div>
+    <div class="container hero__grid">
+      <div class="hero__copy reveal">
+        <!-- H1 semántico con keyword completa; display resalta FARMACÉUTICA -->
+        <h1 class="hero__title">
+          Tarimas <span class="hl">de plástico</span> para la industria <span class="hl">farmacéutica</span>
+        </h1>
+        <p class="hero__lead">Pasa cada auditoría sin que la tarima sea tu punto débil.</p>
+        <p class="hero__body">
+          En farma, una tarima contaminada, rota o sin trazabilidad representa un hallazgo de
+          auditoría, un lote en riesgo y operación detenida. Te damos la tarima correcta y el
+          respaldo técnico para que la inocuidad deje de ser preocupación.
+        </p>
+
+        <ul class="badges" aria-label="Respaldos">
+          <li class="badge">
+            <svg class="badge__ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l8 4v6c0 5-3.4 8.4-8 10-4.6-1.6-8-5-8-10V6l8-4z" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M9 12l2 2 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Resina apta para uso farmacéutico
+          </li>
+          <li class="badge">
+            <svg class="badge__ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21V9l6 4V9l6 4V7l6 4v10z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+            Fabricación bajo ISO 9001
+          </li>
+          <li class="badge">
+            <svg class="badge__ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h11l4 4v12H5z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M8 11l2 2 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Trazabilidad para auditoría
+          </li>
+        </ul>
+
+        <div class="hero__cta">
+          <a href="#diagnostico" class="btn btn--pill btn--lima js-cta">Solicita un diagnóstico gratis</a>
+          <!-- microcopy nuevo — confirmar -->
+          <p class="cta-micro">Sin compromiso · Respuesta rápida</p>
+        </div>
+      </div>
+
+      <div class="hero__visual">
+        <!-- Composición de marca en capas: rejilla + halo verde + persona farma real
+             + tarimas reales 3/4 + tarjetas glass con íconos 3D flotantes. -->
+        <div class="hero-comp reveal-img" role="img" aria-label="Especialista de farma con bata y cofia revisando una tablet junto a tarimas de plástico apiladas, con sellos de inocuidad y auditoría">
+          <span class="hero-comp__grid" aria-hidden="true"></span>
+          <span class="hero-comp__halo" aria-hidden="true"></span>
+
+          <!-- Tarima real (apilada) como apoyo, en 3/4 -->
+          <picture class="hero-comp__tarima" data-parallax="-0.05">
+            <source srcset="assets/object-plastic-stack.webp" type="image/webp">
+            <img src="assets/object-plastic-stack.png"
+                 alt=""
+                 width="320" height="237" decoding="async" fetchpriority="high">
+          </picture>
+
+          <!-- Persona protagonista: operador de farma (bata + cofia) recortado sobre el halo verde -->
+          <figure class="hero-person" data-parallax="0.05">
+            <picture>
+              <source srcset="assets/person-pharma.webp" type="image/webp">
+              <img src="assets/person-pharma.png"
+                   alt="Especialista de farma con bata y cofia revisando una tablet"
+                   width="225" height="440" decoding="async" fetchpriority="high">
+            </picture>
+          </figure>
+
+          <!-- Tarjeta glass: apta para farma / ISO 9001 (escudo 3D) -->
+          <span class="hero-chip hero-chip--farma float">
+            <picture>
+              <source srcset="assets/icon-shield.webp" type="image/webp">
+              <img src="assets/icon-shield.png" alt="" width="38" height="38" aria-hidden="true">
+            </picture>
+            <span class="hero-chip__txt"><b>Apta para farma</b>ISO 9001</span>
+          </span>
+
+          <!-- Tarjeta glass: lista para auditoría (checklist 3D) -->
+          <span class="hero-chip hero-chip--audit float float--delay">
+            <picture>
+              <source srcset="assets/icon-checklist.webp" type="image/webp">
+              <img src="assets/icon-checklist.png" alt="" width="34" height="34" aria-hidden="true">
+            </picture>
+            <span class="hero-chip__txt"><b>Lista para auditoría</b>Trazabilidad</span>
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 2. STATS (Interest) — CLARO (rompe la adyacencia verde-sobre-verde) ===================== -->
+  <section class="stats section--light" aria-labelledby="stats-title">
+    <div class="container">
+      <h2 id="stats-title" class="section-title section-title--center reveal">RESPALDO QUE SE <span class="hl">SIENTE</span></h2>
+      <ul class="stats__grid">
+        <li class="stat reveal">
+          <span class="stat__num" data-count="50" data-suffix="">0</span>
+          <span class="stat__label">años de trayectoria</span>
+        </li>
+        <li class="stat reveal">
+          <span class="stat__num" data-count="90" data-suffix="%">0</span>
+          <span class="stat__label">clientes satisfechos</span>
+        </li>
+        <li class="stat reveal">
+          <span class="stat__num" data-count="500" data-prefix="+">0</span>
+          <span class="stat__label">clientes</span>
+        </li>
+        <li class="stat reveal">
+          <span class="stat__num" data-count="3500" data-format="thousands">0</span>
+          <span class="stat__label">toneladas inyectadas</span>
+        </li>
+        <!-- PENDIENTE (confirmar con cliente): % tarimas recicladas · nº industrias · nº países.
+             No se publican hasta confirmar (regla del blueprint M2). -->
+      </ul>
+    </div>
+  </section>
+
+  <!-- ===================== 3. DOLOR (Interest/Desire) — CLARO ===================== -->
+  <section class="pain section--light" aria-labelledby="pain-title">
+    <div class="container">
+      <h2 id="pain-title" class="section-title section-title--icon reveal">
+        <span class="section-title__ico" aria-hidden="true"><i class="fig-ico fig-ico--red" style="--ic:url('figma-icons/icono-lineal-09.svg')"></i></span>
+        EL <span class="hl">VERDADERO</span> PROBLEMA
+      </h2>
+      <p class="lead reveal">
+        La tarima parece el detalle más económico hasta que cuesta un lote, auditoría o paro de línea.
+        En farma, toca el producto directamente. Entrada con humedad, plaga o sin trazabilidad contamina
+        el lote, frena la línea o genera hallazgo de auditoría. Se compra por precio; el costo real llega
+        tarde. El problema es el riesgo desatendido.
+      </p>
+
+      <div class="cards cards--4">
+        <article class="pain-card reveal">
+          <span class="pain-card__num">01</span>
+          <h3 class="pain-card__title">La higiene no pasa auditoría</h3>
+          <p>Sin tratamiento, certificación ni trazabilidad disponible, un detalle evitable se convierte en hallazgo.</p>
+        </article>
+        <article class="pain-card reveal">
+          <span class="pain-card__num">02</span>
+          <h3 class="pain-card__title">Entra la contaminación cruzada</h3>
+          <p>Humedad, plaga o residuos en madera cuestionan la integridad del lote.</p>
+        </article>
+        <article class="pain-card reveal">
+          <span class="pain-card__num">03</span>
+          <h3 class="pain-card__title">La operación se frena</h3>
+          <p>Roturas, astillas e incompatibilidad con racking detienen líneas y dañan empaque.</p>
+        </article>
+        <article class="pain-card reveal">
+          <span class="pain-card__num">04</span>
+          <h3 class="pain-card__title">No aguantan frío ni movimiento</h3>
+          <p>Cámaras de frío y traslados las deforman donde la cadena no puede fallar.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 4. SOLUCIÓN (Desire) — OSCURO ===================== -->
+  <section class="solution section--grad2" aria-labelledby="sol-title">
+    <div class="container solution__grid">
+      <div class="solution__copy">
+        <h2 id="sol-title" class="section-title reveal">LA <span class="hl">SOLUCIÓN</span></h2>
+        <p class="section-subtitle reveal">Tarimas higiénicas para áreas limpias</p>
+        <p class="lead lead--on-dark reveal">
+          La tarima de plástico correcta elimina el riesgo de raíz: sin contaminación, paros ni hallazgos.
+          Independientemente del material actual, se cambia el punto débil de la cadena por una tarima
+          diseñada para farma: inocua, fácil de sanitizar y resistente, que mueve producto sin meter riesgo
+          ni a la operación ni a la auditoría. Circuito cerrado, exportación o a medida: se define el modelo
+          ideal según ruta y requerimiento sanitario.
+        </p>
+
+        <div class="benefits">
+          <article class="benefit reveal">
+            <span class="benefit__ico benefit__ico--figma" aria-hidden="true">
+              <i style="--ic:url('figma-icons/icono-medicina.svg')"></i>
+            </span>
+            <div>
+              <h3 class="benefit__title">Inocua y fácil de sanitizar</h3>
+              <p>Superficie no porosa, sin acumulación de contaminantes; cumple las normas de higiene más estrictas.</p>
+            </div>
+          </article>
+          <article class="benefit reveal">
+            <span class="benefit__ico benefit__ico--figma" aria-hidden="true">
+              <i style="--ic:url('figma-icons/icono-lineal-05.svg')"></i>
+            </span>
+            <div>
+              <h3 class="benefit__title">Resistente al frío y al movimiento</h3>
+              <p>Soporta cámara de frío, racking y traslados sin deformarse.</p>
+            </div>
+          </article>
+          <article class="benefit reveal">
+            <span class="benefit__ico benefit__ico--figma" aria-hidden="true">
+              <i style="--ic:url('figma-icons/icono-iluminado-principal.svg')"></i>
+            </span>
+            <div>
+              <h3 class="benefit__title">Sostenible</h3>
+              <p>Fabricada con material reciclado, parte del programa de economía circular.</p>
+            </div>
+          </article>
+        </div>
+
+        <a href="#diagnostico" class="btn btn--pill btn--lima js-cta reveal">Solicitar diagnóstico gratis</a>
+      </div>
+
+      <div class="solution__visual reveal-img" aria-hidden="false">
+        <figure class="tarima-stack">
+          <picture>
+            <source srcset="assets/tarima-cerrada.webp" type="image/webp">
+            <img src="assets/tarima-cerrada.png" alt="Tarima plástica cerrada para circuito cerrado e higiene" width="360" height="270" loading="lazy" decoding="async">
+          </picture>
+          <picture>
+            <source srcset="assets/tarima-calada.webp" type="image/webp">
+            <img src="assets/tarima-calada.png" alt="Tarima plástica calada con traversa para exportación" width="360" height="270" loading="lazy" decoding="async">
+          </picture>
+          <picture>
+            <source srcset="assets/tarima-eco.webp" type="image/webp">
+            <img src="assets/tarima-eco.png" alt="Ecotarima de plástico reciclado, opción sostenible y a medida" width="360" height="270" loading="lazy" decoding="async">
+          </picture>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 5. ROI (Desire) — CLARO ===================== -->
+  <section class="roi section--light" aria-labelledby="roi-title">
+    <div class="container">
+      <h2 id="roi-title" class="section-title reveal">LO QUE REALMENTE CUESTA NO CAMBIAR</h2>
+      <p class="lead reveal">
+        La tarima barata no es la de menor precio: es la que no te cuesta un lote, auditoría ni paro de
+        línea. La madera se compra económica y se repone continuamente. El plástico se compra una vez y dura años.
+      </p>
+
+      <div class="roi__compare">
+        <div class="roi-col roi-col--bad reveal">
+          <!-- Tarima de madera real (refuerzo visual del problema) -->
+          <picture class="roi-col__pallet" aria-hidden="true">
+            <source srcset="assets/object-wood-pallet.webp" type="image/webp">
+            <img src="assets/object-wood-pallet.png" alt="" width="160" height="92" loading="lazy" decoding="async">
+          </picture>
+          <h3 class="roi-col__head">
+            <!-- Tache: ícono del Figma (icono-tacha) en rojo -->
+            <span class="mark mark--fig" aria-hidden="true"><i class="fig-ico fig-ico--red" style="--ic:url('figma-icons/icono-tacha.svg')"></i></span>
+            Madera
+          </h3>
+          <ul class="roi-list">
+            <li>Solo <strong>5-6 viajes</strong> de vida útil</li>
+            <li>Reposición continua por astillas, humedad o clavos</li>
+            <li>Riesgo de lote, auditoría y paro de línea</li>
+          </ul>
+          <div class="roi-bar" aria-hidden="true"><span class="roi-bar__fill roi-bar__fill--wood" data-bar="6"></span></div>
+          <p class="roi-bar__cap"><span class="roi-bar__cap-num" data-count="6">0</span> viajes</p>
+        </div>
+
+        <div class="roi-col roi-col--good reveal">
+          <!-- Flecha de crecimiento 3D (ahorro/ROI a favor del plástico) -->
+          <picture class="roi-col__growth float" aria-hidden="true">
+            <source srcset="assets/icon-flecha-crecimiento.webp" type="image/webp">
+            <img src="assets/icon-flecha-crecimiento.png" alt="" width="64" height="64" loading="lazy" decoding="async">
+          </picture>
+          <!-- Tarima de plástico real (refuerzo visual de la solución) -->
+          <picture class="roi-col__pallet" aria-hidden="true">
+            <source srcset="assets/object-plastic-pallet.webp" type="image/webp">
+            <img src="assets/object-plastic-pallet.png" alt="" width="160" height="79" loading="lazy" decoding="async">
+          </picture>
+          <h3 class="roi-col__head">
+            <!-- Palomita: ícono del Figma (icono-lineal-01) en verde -->
+            <span class="mark mark--fig" aria-hidden="true"><i class="fig-ico fig-ico--green" style="--ic:url('figma-icons/icono-lineal-01.svg')"></i></span>
+            Plástico
+          </h3>
+          <ul class="roi-list">
+            <li>Hasta <strong>10 años</strong> de vida útil (250 viajes)</li>
+            <li>Se paga solo en pocos años y sigue rindiendo</li>
+            <li><strong>Cero reposiciones</strong> por astillas, humedad o clavos</li>
+          </ul>
+          <div class="roi-bar" aria-hidden="true"><span class="roi-bar__fill roi-bar__fill--plastic" data-bar="250"></span></div>
+          <p class="roi-bar__cap"><span class="roi-bar__cap-num" data-count="250">0</span> viajes</p>
+        </div>
+      </div>
+
+      <div class="roi__cta reveal">
+        <a href="#diagnostico" class="btn btn--pill btn--dark js-cta">Conoce tu ahorro tras el diagnóstico</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 6. RESPALDO DE FÁBRICA (Desire) — OSCURO ===================== -->
+  <section class="backing section--dark-medium has-grid" aria-labelledby="back-title">
+    <span class="section-grid" aria-hidden="true"></span>
+    <div class="container">
+      <h2 id="back-title" class="section-title section-title--center reveal">EL RESPALDO DETRÁS DE CADA TARIMA</h2>
+      <div class="cards cards--3">
+        <article class="glass-card reveal">
+          <span class="glass-card__ico glass-card__ico--fig" aria-hidden="true"><i class="fig-ico" style="--ic:url('figma-icons/icono-lineal-03.svg')"></i></span>
+          <h3 class="glass-card__title">Respuesta rápida</h3>
+          <p>Cotizamos y resolvemos cuando la operación no puede esperar.</p>
+        </article>
+        <article class="glass-card reveal">
+          <span class="glass-card__ico glass-card__ico--fig" aria-hidden="true"><i class="fig-ico" style="--ic:url('figma-icons/icono-fabrica.svg')"></i></span>
+          <h3 class="glass-card__title">Fabricación propia · 12 inyectoras</h3>
+          <p>Capacidad de volumen y control de calidad de principio a fin.</p>
+        </article>
+        <article class="glass-card reveal">
+          <span class="glass-card__ico glass-card__ico--fig" aria-hidden="true"><i class="fig-ico" style="--ic:url('figma-icons/icono-linea.svg')"></i></span>
+          <h3 class="glass-card__title">Acompañamiento especializado</h3>
+          <p>Diagnóstico, pruebas en operación y soporte en implementación.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 7. CLIENTES (Desire / prueba social) — CLARO ===================== -->
+  <section class="clients section--light" aria-labelledby="clients-title">
+    <div class="container">
+      <h2 id="clients-title" class="section-title section-title--center reveal">Empresas líderes ya confían en nuestras tarimas</h2>
+    </div>
+    <!-- PLACEHOLDER: logos de clientes reales (6-10) PENDIENTES de confirmar con cliente.
+         Marquee con slots en gris hasta recibirlos. -->
+    <div class="marquee" aria-label="Clientes (logos de muestra — pendientes de confirmar)">
+      <div class="marquee__track">
+        <span class="logo-slot">Cliente 01</span>
+        <span class="logo-slot">Cliente 02</span>
+        <span class="logo-slot">Cliente 03</span>
+        <span class="logo-slot">Cliente 04</span>
+        <span class="logo-slot">Cliente 05</span>
+        <span class="logo-slot">Cliente 06</span>
+        <span class="logo-slot">Cliente 07</span>
+        <span class="logo-slot">Cliente 08</span>
+        <!-- duplicado para loop continuo -->
+        <span class="logo-slot" aria-hidden="true">Cliente 01</span>
+        <span class="logo-slot" aria-hidden="true">Cliente 02</span>
+        <span class="logo-slot" aria-hidden="true">Cliente 03</span>
+        <span class="logo-slot" aria-hidden="true">Cliente 04</span>
+        <span class="logo-slot" aria-hidden="true">Cliente 05</span>
+        <span class="logo-slot" aria-hidden="true">Cliente 06</span>
+        <span class="logo-slot" aria-hidden="true">Cliente 07</span>
+        <span class="logo-slot" aria-hidden="true">Cliente 08</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 8. PROCESO (Action) — OSCURO ===================== -->
+  <section class="process section--grad1 has-grid" aria-labelledby="proc-title">
+    <span class="section-grid" aria-hidden="true"></span>
+    <div class="container">
+      <h2 id="proc-title" class="section-title section-title--center reveal">ASÍ DE SIMPLE ES EMPEZAR</h2>
+      <p class="lead lead--on-dark lead--center reveal">De la primera llamada a la tarima correcta, en tres pasos claros.</p>
+
+      <ol class="steps">
+        <li class="step reveal">
+          <span class="step__head">
+            <span class="step__num">1</span>
+            <span class="step__ico" aria-hidden="true"><i class="fig-ico" style="--ic:url('figma-icons/icono-lineal-06.svg')"></i></span>
+          </span>
+          <h3 class="step__title">Diagnóstico</h3>
+          <p>En 20 minutos se entiende la operación, normativa y racking. Se identifica el riesgo real de la tarima actual.</p>
+        </li>
+        <li class="step reveal">
+          <span class="step__head">
+            <span class="step__num">2</span>
+            <span class="step__ico" aria-hidden="true"><i class="fig-ico" style="--ic:url('figma-icons/icono-lineal-01.svg')"></i></span>
+          </span>
+          <h3 class="step__title">Pruebas</h3>
+          <p>Se prueba la tarima correcta en la operación, con el producto y condiciones reales. Validación en campo, no promesas en papel.</p>
+        </li>
+        <li class="step reveal">
+          <span class="step__head">
+            <span class="step__num">3</span>
+            <span class="step__ico" aria-hidden="true"><i class="fig-ico" style="--ic:url('figma-icons/icono-lineal-11.svg')"></i></span>
+          </span>
+          <h3 class="step__title">Recomendación y cotización</h3>
+          <p>Entrega de la recomendación de tarima ideal y cotización clara, con ahorro proyectado frente a lo actual.</p>
+        </li>
+      </ol>
+
+      <div class="process__cta reveal">
+        <a href="#diagnostico" class="btn btn--pill btn--lima js-cta">Empieza por el diagnóstico</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 9. FORMULARIO (Action) — CLARO ===================== -->
+  <section class="form-section section--light" id="diagnostico" aria-labelledby="form-title">
+    <div class="container form-grid">
+      <div class="form-copy reveal">
+        <h2 id="form-title" class="section-title">SOLICITA UN DIAGNÓSTICO PARA TU <span class="hl">OPERACIÓN</span></h2>
+        <p class="form-subtitle">¿Damos el primer paso?</p>
+        <p class="lead">
+          Cuéntanos cómo es tu operación y te recomendamos la tarima ideal para tu producto y normativa,
+          que te ayude a reducir el riesgo en tu próxima auditoría.
+        </p>
+
+        <!-- Persona real (procurement/QA, camisa verde de marca) sobre panel verde + badges -->
+        <div class="form-aside form-aside--person">
+          <figure class="form-aside__person">
+            <picture>
+              <source srcset="assets/person-procurement.webp" type="image/webp">
+              <img src="assets/person-procurement.png"
+                   alt="Especialista de GT+plastics con tablet y portapapeles, lista para tu diagnóstico"
+                   width="240" height="466" loading="lazy" decoding="async">
+            </picture>
+          </figure>
+          <div class="form-aside__body">
+            <img src="assets/favicon.svg" alt="" width="42" height="42" class="form-aside__iso" aria-hidden="true">
+            <ul class="form-aside__badges">
+              <li>ISO 9001</li>
+              <li>12 inyectoras</li>
+              <li>50 años de trayectoria</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-card reveal">
+        <!-- HubSpot Portal ID / Form ID PENDIENTE.
+             Cuando exista el portal, reemplazar este <form> por el embed de HubSpot.
+             El campo de calificación mapea a la propiedad HubSpot: tipo_de_tarima_actual -->
+        <form id="diagnostico-form" class="diag-form" novalidate>
+          <div class="field">
+            <label for="f-nombre">Nombre <span class="req">*</span></label>
+            <input type="text" id="f-nombre" name="nombre" autocomplete="name" required>
+          </div>
+          <div class="field">
+            <label for="f-empresa">Empresa <span class="req">*</span></label>
+            <input type="text" id="f-empresa" name="empresa" autocomplete="organization" required>
+          </div>
+          <div class="field">
+            <label for="f-email">Correo corporativo <span class="req">*</span></label>
+            <input type="email" id="f-email" name="email" autocomplete="email" required>
+          </div>
+          <div class="field">
+            <label for="f-telefono">Teléfono <span class="opt">(opcional)</span></label>
+            <input type="tel" id="f-telefono" name="telefono" autocomplete="tel">
+          </div>
+
+          <fieldset class="field field--radio">
+            <legend>¿Hoy usas tarima de madera o de plástico? <span class="req">*</span></legend>
+            <label class="radio"><input type="radio" name="tipo_de_tarima_actual" value="madera" required> Madera</label>
+            <label class="radio"><input type="radio" name="tipo_de_tarima_actual" value="plastico"> Plástico</label>
+            <label class="radio"><input type="radio" name="tipo_de_tarima_actual" value="ambas_no_seguro"> Ambas / No estoy seguro</label>
+          </fieldset>
+
+          <div class="field">
+            <label for="f-mensaje">Cuéntanos de tu operación <span class="opt">(opcional)</span></label>
+            <textarea id="f-mensaje" name="mensaje" rows="3"></textarea>
+          </div>
+
+          <button type="submit" class="btn btn--pill btn--lima btn--block">Solicitar diagnóstico</button>
+          <!-- microcopy nuevo — confirmar -->
+          <p class="cta-micro cta-micro--dark">Diagnóstico gratis · 20 minutos · Sin compromiso.</p>
+
+          <p class="form-status" id="form-status" role="status" aria-live="polite" hidden></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ===================== FOOTER — OSCURO ===================== -->
+<footer class="site-footer section--dark-solid">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <!-- Logo GT Plastics en BLANCO (versión del design system) sobre fondo oscuro -->
+      <img src="assets/logo-gtplastics-blanco.svg" alt="GT+plastics" width="180" height="42">
+      <p class="footer-tagline">Tarimas de plástico para la industria farmacéutica.</p>
+    </div>
+    <div class="footer-cta">
+      <a href="#diagnostico" class="btn btn--pill btn--lima js-cta">Solicita un diagnóstico gratis</a>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <a href="https://www.gtplastics.mx" class="footer-link">www.gtplastics.mx</a>
+    <span class="footer-sep" aria-hidden="true">·</span>
+    <!-- Enlace de aviso de privacidad PENDIENTE de URL real -->
+    <a href="#" class="footer-link">Aviso de privacidad</a>
+    <span class="footer-sep" aria-hidden="true">·</span>
+    <span class="footer-copy">© <span id="year">2026</span> GT+plastics</span>
+  </div>
+</footer>
+
+<!-- Sticky CTA (móvil: barra inferior / desktop: botón flotante) -->
+<div class="sticky-cta" id="sticky-cta" hidden>
+  <span class="sticky-cta__text">Diagnóstico gratis · 20 min · sin compromiso</span>
+  <a href="#diagnostico" class="btn btn--pill btn--lima js-cta">Solicita un diagnóstico gratis</a>
+</div>
+
+<script src="assets/script.js" defer></script>
+</body>
+</html>
