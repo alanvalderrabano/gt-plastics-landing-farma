@@ -1,0 +1,21 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor / herramientas locales
+.claude/
+.vscode/
+*.log
+
+# Dependencias / build
+node_modules/
+dist/
+.cache/
+
+# Variables de entorno y credenciales (nunca commitear)
+.env
+.env.*
+*.key
+*.pem
+*token*
+*secret*
