@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+<!-- Rejilla de marca GT (equivalente ligero y tileable de forma-rejilla.svg, blanca, sobre fondo oscuro) -->
+<g fill="none" stroke="#ffffff" stroke-width="1" opacity="0.5">
+<path d="M0 0.5H48 M0 24.5H48 M0.5 0V48 M24.5 0V48"/>
+</g>
+<g fill="#ffffff" opacity="0.5">
+<circle cx="0.5" cy="0.5" r="1.1"/><circle cx="24.5" cy="0.5" r="1.1"/>
+<circle cx="0.5" cy="24.5" r="1.1"/><circle cx="24.5" cy="24.5" r="1.1"/>
+</g>
+</svg>
