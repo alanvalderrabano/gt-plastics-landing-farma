@@ -637,15 +637,14 @@ section { padding-block: 64px; position: relative; }
   [data-parallax] { transform: none !important; }
 }
 
-/* ===== Hero estilo banner: foto de escena que se funde en el verde de marca ===== */
-.hero__visual { position: relative; }
-.hero-photo { display: block; position: relative; overflow: hidden; height: 300px; }
-.hero-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; }
-.hero__visual::after {
-  content: ""; position: absolute; inset: 0; pointer-events: none; z-index: 2;
-  background: linear-gradient(180deg, #0c2a17 0%, rgba(12,42,23,0) 32%);
-}
-@media (min-width: 880px) {
-  .hero-photo { position: absolute; inset: 0; height: auto; }
-  .hero__visual::after { background: linear-gradient(100deg, #0c2a17 3%, rgba(12,42,23,.55) 22%, rgba(12,42,23,0) 46%); }
+/* ===== Hero con banner GT generado (imagen full-bleed; el verde del banner queda a la izquierda para el copy) ===== */
+.hero { position: relative; overflow: hidden; }
+.hero__bgphoto { position: absolute; inset: 0; z-index: 0; display: block; }
+.hero__bgphoto img { width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; }
+.hero__scrim { position: absolute; inset: 0; z-index: 1; pointer-events: none;
+  background: linear-gradient(100deg, rgba(9,33,23,.82) 0%, rgba(9,33,23,.42) 32%, rgba(9,33,23,0) 56%); }
+.hero .hero__grid { position: relative; z-index: 2; }
+@media (max-width: 879px) {
+  .hero__bgphoto img { object-position: 72% center; }
+  .hero__scrim { background: linear-gradient(180deg, rgba(9,33,23,.93) 0%, rgba(9,33,23,.66) 52%, rgba(9,33,23,.42) 100%); }
 }

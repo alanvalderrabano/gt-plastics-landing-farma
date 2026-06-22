@@ -31,7 +31,7 @@
 <link rel="stylesheet" href="assets/styles.css">
 
 <!-- Preload del hero (LCP): persona operaciones/almacén + tarima en composición -->
-<link rel="preload" as="image" href="assets/hero-scene.webp" type="image/webp">
+<link rel="preload" as="image" href="assets/hero-banner.webp" type="image/webp">
 
 <!-- Schema JSON-LD: Organization + Service -->
 <script type="application/ld+json">
@@ -71,7 +71,11 @@
 
   <!-- ===================== 1. HERO (Attention) — OSCURO ===================== -->
   <section class="hero section--dark" id="hero">
-    <div class="hero__bg" aria-hidden="true"></div>
+    <picture class="hero__bgphoto">
+      <source srcset="assets/hero-banner.webp" type="image/webp">
+      <img src="assets/hero-banner.jpg" alt="Tarimas de plástico GT en un almacén de alta rotación con montacargas" decoding="async" fetchpriority="high">
+    </picture>
+    <span class="hero__scrim" aria-hidden="true"></span>
     <div class="container hero__grid">
       <div class="hero__copy reveal">
         <!-- H1 semántico con keyword completa; display resalta CONSUMO MASIVO -->
@@ -107,13 +111,6 @@
         </div>
       </div>
 
-      <div class="hero__visual">
-        <!-- Foto de escena con corte diagonal que se funde en el verde de marca (estilo banner GT) -->
-        <picture class="hero-photo">
-          <source srcset="assets/hero-scene.webp" type="image/webp">
-          <img src="assets/hero-scene.jpg" alt="Almacén de alta rotación con tarimas de plástico GT y montacargas" width="834" height="1100" decoding="async" fetchpriority="high">
-        </picture>
-      </div>
     </div>
   </section>
 
