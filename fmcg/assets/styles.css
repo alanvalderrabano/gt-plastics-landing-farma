@@ -679,3 +679,15 @@ section { padding-block: 64px; position: relative; }
   content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
   background: url("tex-cuadros.svg") right -40px bottom / 46% auto no-repeat; opacity: .32;
 }
+/* Dolor: mismos cuadros verdes detrás de las tarjetas (sobre el gris) */
+.pain { position: relative; isolation: isolate; }
+.pain::before {
+  content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+  background: url("tex-cuadros.svg") right -40px bottom / 46% auto no-repeat; opacity: .3;
+}
+/* Proceso: cuadros blancos en lugar del grid de líneas (quita el grid actual) */
+.process .section-grid { display: none; }
+.process::before {
+  content: ""; position: absolute; inset: 0; z-index: 0; pointer-events: none;
+  background: url("tex-cuadros-blanco.svg") right -40px bottom / 46% auto no-repeat; opacity: .14;
+}
