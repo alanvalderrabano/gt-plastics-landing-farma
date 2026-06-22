@@ -638,14 +638,27 @@ section { padding-block: 64px; position: relative; }
   .hero-photo { -webkit-mask: none !important; mask: none !important; }
 }
 
-/* ===== Hero con banner GT generado (imagen full-bleed; el verde del banner queda a la izquierda para el copy) ===== */
-.hero { position: relative; overflow: hidden; }
-.hero__bgphoto { position: absolute; inset: 0; z-index: 0; display: block; }
+/* ===== Hero con corte GT (foto de escena recortada con la forma del banner: diagonal → redondeo → vertical) ===== */
+.hero { position: relative; overflow: hidden;
+  background: radial-gradient(120% 95% at 16% 28%, #1d5232 0%, #0c2a17 52%, #06200f 100%); }
+.hero__clipdef { position: absolute; }
+.hero__grid-tex { position: absolute; inset: 0; z-index: 0; pointer-events: none; opacity: .42;
+  background-image: linear-gradient(rgba(255,255,255,.06) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.06) 1px, transparent 1px);
+  background-size: 46px 46px; }
+.hero__bgphoto { position: absolute; inset: 0; z-index: 1; display: block; }
 .hero__bgphoto img { width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; }
-.hero__scrim { position: absolute; inset: 0; z-index: 1; pointer-events: none;
-  background: linear-gradient(100deg, rgba(9,33,23,.82) 0%, rgba(9,33,23,.42) 32%, rgba(9,33,23,0) 56%); }
-.hero .hero__grid { position: relative; z-index: 2; }
+.hero__scrim { display: none; }
+.hero .hero__grid { position: relative; z-index: 3; }
+.hero__copy { max-width: min(540px, 40vw); }
+/* Forma del corte solo en desktop (la foto ocupa el lado derecho con la silueta GT) */
+@media (min-width: 880px) {
+  .hero__bgphoto { -webkit-clip-path: url(#heroCut); clip-path: url(#heroCut); }
+}
+/* En móvil: foto full-bleed con scrim verde para el texto (sin recorte) */
 @media (max-width: 879px) {
-  .hero__bgphoto img { object-position: 72% center; }
-  .hero__scrim { background: linear-gradient(180deg, rgba(9,33,23,.93) 0%, rgba(9,33,23,.66) 52%, rgba(9,33,23,.42) 100%); }
+  .hero__grid-tex { display: none; }
+  .hero__bgphoto img { object-position: 70% center; }
+  .hero__scrim { display: block; position: absolute; inset: 0; z-index: 2; pointer-events: none;
+    background: linear-gradient(180deg, rgba(9,33,23,.93) 0%, rgba(9,33,23,.66) 52%, rgba(9,33,23,.42) 100%); }
+  .hero__copy { max-width: none; }
 }
