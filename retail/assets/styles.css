@@ -659,3 +659,10 @@ section { padding-block: 64px; position: relative; }
     background: linear-gradient(180deg, rgba(9,33,23,.93) 0%, rgba(9,33,23,.66) 52%, rgba(9,33,23,.42) 100%); }
   .hero__copy { max-width: none; }
 }
+
+/* Textura de cuadros verdes detrás de las tarjetas del ROI (sobre el gris, sin cambiar el fondo) */
+.roi { position: relative; isolation: isolate; }
+.roi::before {
+  content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+  background: url("tex-cuadros.svg") right -40px bottom / 46% auto no-repeat; opacity: .32;
+}
