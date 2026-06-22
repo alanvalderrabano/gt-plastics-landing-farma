@@ -636,3 +636,16 @@ section { padding-block: 64px; position: relative; }
   .reveal.is-in .hl { animation: none; }
   [data-parallax] { transform: none !important; }
 }
+
+/* ===== Hero estilo banner: foto de escena que se funde en el verde de marca ===== */
+.hero__visual { position: relative; }
+.hero-photo { display: block; position: relative; overflow: hidden; height: 300px; }
+.hero-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; }
+.hero__visual::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none; z-index: 2;
+  background: linear-gradient(180deg, #0c2a17 0%, rgba(12,42,23,0) 32%);
+}
+@media (min-width: 880px) {
+  .hero-photo { position: absolute; inset: 0; height: auto; }
+  .hero__visual::after { background: linear-gradient(100deg, #0c2a17 3%, rgba(12,42,23,.55) 22%, rgba(12,42,23,0) 46%); }
+}

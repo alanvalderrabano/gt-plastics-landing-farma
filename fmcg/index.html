@@ -31,8 +31,7 @@
 <link rel="stylesheet" href="assets/styles.css">
 
 <!-- Preload del hero (LCP): persona operaciones/almacén + tarima en composición -->
-<link rel="preload" as="image" href="assets/object-plastic-stack.webp" type="image/webp">
-<link rel="preload" as="image" href="assets/person-scanner.webp" type="image/webp">
+<link rel="preload" as="image" href="assets/hero-scene.webp" type="image/webp">
 
 <!-- Schema JSON-LD: Organization + Service -->
 <script type="application/ld+json">
@@ -109,48 +108,11 @@
       </div>
 
       <div class="hero__visual">
-        <!-- Composición de marca en capas: rejilla + halo verde + persona operaciones/almacén real
-             + tarimas reales 3/4 + tarjetas glass con íconos 3D flotantes. -->
-        <div class="hero-comp reveal-img" role="img" aria-label="Operador de almacén con escáner junto a tarimas de plástico apiladas, con sellos de aptitud para alimentos y alta rotación">
-          <span class="hero-comp__grid" aria-hidden="true"></span>
-          <span class="hero-comp__halo" aria-hidden="true"></span>
-
-          <!-- Tarima real (apilada) como apoyo, en 3/4 -->
-          <picture class="hero-comp__tarima" data-parallax="-0.05">
-            <source srcset="assets/object-plastic-stack.webp" type="image/webp">
-            <img src="assets/object-plastic-stack.png"
-                 alt=""
-                 width="320" height="237" decoding="async" fetchpriority="high">
-          </picture>
-
-          <!-- Persona protagonista: operador de almacén con escáner recortado sobre el halo verde -->
-          <figure class="hero-person" data-parallax="0.05">
-            <picture>
-              <source srcset="assets/person-scanner.webp" type="image/webp">
-              <img src="assets/person-scanner.png"
-                   alt="Operador de almacén con escáner revisando inventario sobre tarimas de plástico"
-                   width="266" height="400" decoding="async" fetchpriority="high">
-            </picture>
-          </figure>
-
-          <!-- Tarjeta glass: apta para alimentos / ISO 9001 (escudo 3D) -->
-          <span class="hero-chip hero-chip--farma float">
-            <picture>
-              <source srcset="assets/icon-shield.webp" type="image/webp">
-              <img src="assets/icon-shield.png" alt="" width="38" height="38" aria-hidden="true">
-            </picture>
-            <span class="hero-chip__txt"><b>Apta para alimentos</b>ISO 9001</span>
-          </span>
-
-          <!-- Tarjeta glass: lista para alta rotación (checklist 3D) -->
-          <span class="hero-chip hero-chip--audit float float--delay">
-            <picture>
-              <source srcset="assets/icon-checklist.webp" type="image/webp">
-              <img src="assets/icon-checklist.png" alt="" width="34" height="34" aria-hidden="true">
-            </picture>
-            <span class="hero-chip__txt"><b>Lista para alta rotación</b>Alto volumen</span>
-          </span>
-        </div>
+        <!-- Foto de escena con corte diagonal que se funde en el verde de marca (estilo banner GT) -->
+        <picture class="hero-photo">
+          <source srcset="assets/hero-scene.webp" type="image/webp">
+          <img src="assets/hero-scene.jpg" alt="Almacén de alta rotación con tarimas de plástico GT y montacargas" width="834" height="1100" decoding="async" fetchpriority="high">
+        </picture>
       </div>
     </div>
   </section>
