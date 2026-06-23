@@ -673,7 +673,7 @@ section { padding-block: 64px; position: relative; }
 .pain { position: relative; isolation: isolate; }
 .pain::before {
   content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
-  background: url("tex-mapa.webp") right -30px top 30px / 50% auto no-repeat; opacity: .55;
+  background: url("tex-mapa.webp") right -30px bottom 30px / 50% auto no-repeat; opacity: .55;
 }
 /* Proceso: textura Frame 15 (rejilla + globo) a todo el ancho, en vez del grid */
 .process .section-grid { display: none; }
