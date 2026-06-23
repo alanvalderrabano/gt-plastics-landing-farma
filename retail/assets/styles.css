@@ -459,7 +459,7 @@ section { padding-block: 64px; position: relative; }
 .steps { display: grid; gap: 26px; margin: 40px 0 32px; counter-reset: none; position: relative; }
 .step {
   position: relative; padding: 26px 24px 24px;
-  background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.14);
+  background: rgba(7,28,16,.58); border: 1px solid rgba(255,255,255,.16); -webkit-backdrop-filter: blur(3px); backdrop-filter: blur(3px);
   border-radius: var(--gt-radius-sm);
   z-index: 2; /* la tarjeta y su número quedan por ENCIMA de la línea conectora */
 }
@@ -602,7 +602,7 @@ section { padding-block: 64px; position: relative; }
     z-index: 1; transition: width 1.4s ease;
   }
   .steps.is-drawn::after { width: 76%; }
-  .step { background: rgba(255,255,255,.06); }
+  .step { background: rgba(7,28,16,.58); }
   .hero-comp { width: 100%; height: 100%; min-height: 100%; padding: 0; border: none; border-left: 1px solid rgba(255,255,255,.14); border-radius: 0; box-shadow: none; }
   .hero-comp__tarima { max-width: 380px; width: 50%; right: 7%; bottom: 12%; }
   .hero-person { max-width: 380px; width: 44%; left: 9%; bottom: 0; }
