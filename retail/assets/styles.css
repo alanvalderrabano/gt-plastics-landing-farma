@@ -310,6 +310,8 @@ section { padding-block: 64px; position: relative; }
 /* ---------- 4. SOLUCIÓN ---------- */
 .solution__grid { display: grid; gap: 40px; align-items: center; }
 .benefits { display: grid; gap: 18px; margin: 26px 0 30px; }
+/* Retail: 4 diferenciadores en grid 2x2 desde tablet (mobile-first sigue 1 col) */
+@media (min-width: 600px) { .benefits--4 { grid-template-columns: repeat(2, 1fr); } }
 .benefit {
   display: flex; gap: 16px; align-items: flex-start;
   background: rgba(255,255,255,.07);
@@ -453,6 +455,17 @@ section { padding-block: 64px; position: relative; }
   filter: grayscale(1); transition: filter .25s ease, color .25s ease;
 }
 .logo-slot:hover { filter: grayscale(0); color: var(--gt-verde-medio); }
+/* Chip de NOMBRE de cliente estilizado (on-brand) — placeholder hasta tener logos reales */
+.logo-slot--name {
+  width: auto; min-width: 150px; padding: 0 28px;
+  filter: none;
+  color: var(--gt-verde-oscuro, #1f5c1f);
+  font-size: 19px; font-weight: 700; letter-spacing: 1px;
+  border-color: #d6e6cf;
+  background: linear-gradient(180deg, #fff, #f4faf0);
+  box-shadow: 0 6px 16px rgba(80,168,25,.08);
+}
+.logo-slot--name:hover { color: var(--gt-verde-medio); border-color: var(--gt-acento); }
 @keyframes marquee { to { transform: translateX(-50%); } }
 
 /* ---------- 8. PROCESO ---------- */
